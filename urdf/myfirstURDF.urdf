@@ -1,0 +1,113 @@
+<?xml version="1.0" ?>
+<robot name="myfirst">
+    <material name="blue">
+        <color rgba="0 0 0.8 1" />
+    </material>
+    <material name="black">
+        <color rgba="0 0 0 1" />
+    </material>
+    <material name="white">
+        <color rgba="1 1 1 1" />
+    </material>
+
+     <link name="origin">
+        <visual>
+            <geometry>
+                <box size="0.1 0.1 0.1" />
+            </geometry>
+            <material name="black" />
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0 0 0" />
+            </geometry>
+        </collision>
+        
+        <inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+
+    </link>
+    <link name="originX">
+        <visual>
+            <geometry>
+                <box size="0.1 0.1 0.1" />
+            </geometry>
+            <material name="black" />
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0 0 0" />
+            </geometry>
+        </collision>
+        
+        <inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+
+    </link>
+    <link name="originY">
+        <visual>
+            <geometry>
+                <box size="0.1 0.1 0.1" />
+            </geometry>
+            <material name="black" />
+        </visual>
+        <collision>
+            <geometry>
+                <box size="0 0 0" />
+            </geometry>
+        </collision>
+        
+        <inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+
+    </link>
+    
+    <link name="base_link">
+        <visual>
+            <geometry>
+                <box size="1.0 1 1" />
+            </geometry>
+        </visual>
+        <collision>
+            <geometry>
+                <box size="1.0 1 1" />
+            </geometry>
+        </collision>
+        
+        <inertial>
+            <mass value="0.1" />
+            <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
+        </inertial>
+
+    </link>
+
+
+
+    <joint name="t_x" type="prismatic">
+        <parent link="origin" />
+        <child link="originX" />
+        <limit effort="30.0" velocity="1.0" lower="-100" upper="100" />
+        <axis xyz="1 0 0" />
+    </joint>
+    <joint name="t_y" type="prismatic">
+        <parent link="originX" />
+        <child link="originY" />
+        <limit effort="30.0" velocity="1.0" lower="-100" upper="100" />
+        <axis xyz="0 1 0" />
+    </joint>
+    <joint name="t_z" type="prismatic">
+        <parent link="originY" />
+        <child link="base_link" />
+        <limit effort="30.0" velocity="1.0" lower="-100" upper="100" />
+        <axis xyz="0 0 1" />
+    </joint>
+
+
+
+</robot>

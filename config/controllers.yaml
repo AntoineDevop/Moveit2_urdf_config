@@ -1,0 +1,12 @@
+controller_names:
+  - joint_trajectory_controller
+
+
+joint_trajectory_controller:
+  action_ns: follow_joint_trajectory
+  type: FollowJointTrajectory
+  default: false
+  joints:
+    - t_x
+    - t_y
+    - t_z
