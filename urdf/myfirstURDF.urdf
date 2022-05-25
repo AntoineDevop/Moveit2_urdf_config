@@ -10,7 +10,7 @@
         <color rgba="1 1 1 1" />
     </material>
 
-     <link name="origin">
+     <!-- <link name="origin">
         <visual>
             <geometry>
                 <box size="0.1 0.1 0.1" />
@@ -65,8 +65,8 @@
             <mass value="0.1" />
             <inertia ixx="0.03" iyy="0.03" izz="0.03" ixy="0.0" ixz="0.0" iyz="0.0" />
         </inertial>
-
-    </link>
+ 
+    </link> -->
     
     <link name="base_link">
         <visual>
@@ -89,7 +89,7 @@
 
 
 
-    <joint name="t_x" type="prismatic">
+    <!-- <joint name="t_x" type="prismatic">
         <parent link="origin" />
         <child link="originX" />
         <limit effort="30.0" velocity="1.0" lower="-100" upper="100" />
@@ -106,7 +106,7 @@
         <child link="base_link" />
         <limit effort="30.0" velocity="1.0" lower="-100" upper="100" />
         <axis xyz="0 0 1" />
-    </joint>
+    </joint> -->
 
 
 
